@@ -1,0 +1,1380 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="COURT ELITE: sua loja de artigos de basquete. Tênis, roupas, bolas e acessórios.">
+<title>COURT ELITE | Sua paixão pela quadra</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --orange: #ff781f;
+  --orange-dark: #df570c;
+  --black: #111111;
+  --dark: #191919;
+  --gray: #777777;
+  --light: #f5f5f5;
+  --white: #ffffff;
+  --font-scale: 1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: calc(16px * var(--font-scale));
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--light);
+  color: var(--black);
+  line-height: 1.6;
+}
+
+body.high-contrast {
+  --orange: #ffff00;
+  --orange-dark: #ffff00;
+  --black: #000000;
+  --dark: #000000;
+  --gray: #ffffff;
+  --light: #000000;
+  --white: #ffffff;
+}
+
+body.high-contrast .hero,
+body.high-contrast footer,
+body.high-contrast .access-toolbar {
+  background: #000000;
+  color: #ffffff;
+}
+
+body.high-contrast .product-card,
+body.high-contrast .category-card,
+body.high-contrast .benefit {
+  background: #000000;
+  color: #ffffff;
+  border: 2px solid #ffff00;
+}
+
+body.high-contrast p,
+body.high-contrast .product-card p,
+body.high-contrast .category-card p {
+  color: #ffffff;
+}
+
+body.large-text {
+  --font-scale: 1.2;
+}
+
+body.highlight-links a,
+body.highlight-links button {
+  outline: 2px solid #ffbf00;
+  outline-offset: 3px;
+}
+
+body.reduce-motion *,
+body.reduce-motion *::before,
+body.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+button, input {
+  font: inherit;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 4px solid #ff9d00;
+  outline-offset: 4px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 10px;
+  z-index: 9999;
+  padding: 12px 18px;
+  background: var(--orange);
+  color: #111;
+  font-weight: 800;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* CABEÇALHO */
+
+header {
+  background: var(--black);
+  color: white;
+  padding: 0 7%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid var(--orange);
+}
+
+.navbar {
+  min-height: 78px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--orange);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+nav a:hover {
+  color: var(--orange);
+}
+
+.nav-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.cart-button, .access-button {
+  border: 0;
+  border-radius: 7px;
+  cursor: pointer;
+  padding: 11px 15px;
+  font-weight: 800;
+}
+
+.cart-button {
+  background: var(--orange);
+  color: #111;
+}
+
+.access-button {
+  background: white;
+  color: #111;
+}
+
+.menu-button {
+  display: none;
+  background: transparent;
+  color: white;
+  border: 1px solid #777;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 520px;
+  padding: 80px 8%;
+  display: flex;
+  align-items: center;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.94), rgba(0,0,0,.35)),
+    url('https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=1800&q=85')
+    center 48% / cover;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.hero-tag {
+  color: var(--orange);
+  font-weight: 800;
+  letter-spacing: 3px;
+  font-size: .85rem;
+}
+
+.hero h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(3.8rem, 8vw, 6.5rem);
+  line-height: .92;
+  margin: 20px 0;
+  text-transform: uppercase;
+}
+
+.hero h1 span {
+  color: var(--orange);
+}
+
+.hero p {
+  color: #e1e1e1;
+  max-width: 460px;
+  font-size: 1.05rem;
+}
+
+.primary-button {
+  display: inline-block;
+  margin-top: 22px;
+  background: var(--orange);
+  color: #111;
+  padding: 15px 28px;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 900;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.primary-button:hover {
+  background: white;
+  transform: translateY(-2px);
+}
+
+/* GERAL */
+
+section {
+  padding: 75px 8%;
+}
+
+.section-title {
+  margin-bottom: 35px;
+}
+
+.section-title small {
+  color: var(--orange-dark);
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.section-title h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3rem;
+  line-height: 1;
+  margin: 8px 0;
+  text-transform: uppercase;
+}
+
+.section-title p {
+  color: #666;
+}
+
+/* CATEGORIAS */
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.category-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: .25s;
+  box-shadow: 0 5px 20px #0000000c;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+}
+
+.category-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.category-info {
+  padding: 17px;
+}
+
+.category-info h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.7rem;
+  margin: 0;
+}
+
+.category-info p {
+  color: #777;
+  margin: 3px 0;
+  font-size: .85rem;
+}
+
+/* PRODUTOS */
+
+.products-section {
+  background: #ededed;
+}
+
+.product-tools {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.search-input, .filter-select {
+  padding: 13px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+  min-height: 48px;
+}
+
+.search-input {
+  width: min(100%, 340px);
+}
+
+.filter-select {
+  min-width: 180px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 9px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px #0000000b;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  background: #ddd;
+}
+
+.product-info {
+  padding: 17px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-info .category {
+  font-size: .75rem;
+  font-weight: 800;
+  color: var(--orange-dark);
+  text-transform: uppercase;
+}
+
+.product-info h3 {
+  margin: 6px 0;
+  font-size: 1.05rem;
+}
+
+.product-info p {
+  color: #666;
+  font-size: .85rem;
+  margin: 0 0 12px;
+}
+
+.price {
+  font-weight: 900;
+  font-size: 1.35rem;
+  margin-top: auto;
+}
+
+.add-button {
+  margin-top: 13px;
+  background: var(--black);
+  color: white;
+  border: 0;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.add-button:hover {
+  background: var(--orange-dark);
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 35px;
+}
+
+/* BENEFÍCIOS */
+
+.benefits {
+  background: var(--black);
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+}
+
+.benefit h3 {
+  color: var(--orange);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.7rem;
+  margin: 10px 0 3px;
+}
+
+/* SOBRE */
+
+.about {
+  background: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.about img {
+  width: 100%;
+  border-radius: 10px;
+  max-height: 380px;
+  object-fit: cover;
+}
+
+.about h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.about p {
+  color: #555;
+}
+
+/* CONTATO */
+
+.contact {
+  text-align: center;
+  background: var(--orange);
+}
+
+.contact h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.contact p {
+  margin: 8px 0 20px;
+}
+
+.contact a {
+  background: #111;
+  color: white;
+  display: inline-block;
+  padding: 13px 25px;
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 5px;
+}
+
+/* RODAPÉ */
+
+footer {
+  background: #111;
+  color: white;
+  padding: 35px 8%;
+  text-align: center;
+}
+
+footer .logo {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+footer p {
+  color: #bbb;
+  font-size: .85rem;
+}
+
+/* ACESSIBILIDADE */
+
+.access-toolbar {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 500;
+  background: #111;
+  color: white;
+  border: 2px solid var(--orange);
+  border-radius: 50px;
+  padding: 12px 18px;
+  cursor: pointer;
+  font-weight: 800;
+  box-shadow: 0 4px 20px #0005;
+}
+
+dialog {
+  border: none;
+  border-radius: 14px;
+  padding: 0;
+  width: min(92%, 540px);
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 15px 70px #0008;
+  color: #111;
+}
+
+dialog::backdrop {
+  background: #000b;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  padding: 30px;
+}
+
+.modal-logo {
+  color: #111;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.modal-logo span {
+  color: var(--orange-dark);
+}
+
+.modal-content h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2rem;
+  line-height: 1.1;
+  margin: 15px 0 8px;
+}
+
+.modal-content > p {
+  color: #555;
+}
+
+.modal-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border: 1px solid #ddd;
+  padding: 13px;
+  border-radius: 7px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.modal-option input {
+  width: 20px;
+  height: 20px;
+  accent-color: #e65c0b;
+  margin-top: 3px;
+}
+
+.modal-option strong {
+  display: block;
+}
+
+.modal-option small {
+  color: #666;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  flex: 1;
+  min-width: 130px;
+  padding: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 800;
+  border: 0;
+}
+
+.modal-primary {
+  background: var(--orange);
+  color: #111;
+}
+
+.modal-secondary {
+  background: #eee;
+  color: #111;
+}
+
+#access-settings {
+  display: none;
+}
+
+#access-settings.visible {
+  display: block;
+}
+
+.cart-message {
+  position: fixed;
+  left: 50%;
+  bottom: 25px;
+  transform: translateX(-50%);
+  background: #111;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 8px;
+  z-index: 800;
+  display: none;
+  max-width: 90%;
+  text-align: center;
+}
+
+.cart-message.visible {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .categories, .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 650px) {
+  header {
+    padding: 0 5%;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    padding: 12px 0;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 0;
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .menu-button {
+    display: inline-block;
+  }
+
+  .nav-actions {
+    margin-left: auto;
+  }
+
+  .access-button {
+    display: none;
+  }
+
+  .hero {
+    min-height: 450px;
+    padding: 65px 7%;
+  }
+
+  section {
+    padding: 55px 6%;
+  }
+
+  .categories, .products {
+    gap: 12px;
+  }
+
+  .category-card img {
+    height: 140px;
+  }
+
+  .product-card img {
+    height: 145px;
+  }
+
+  .product-info {
+    padding: 11px;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title h2 {
+    font-size: 2.5rem;
+  }
+
+  .product-tools {
+    flex-direction: column;
+  }
+
+  .search-input, .filter-select {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+<header>
+  <div class="navbar">
+    <a class="logo" href="#" aria-label="COURT ELITE - Página inicial">
+      COURT <span>ELITE.</span>
+    </a>
+
+    <button class="menu-button" id="menu-button"
+      aria-label="Abrir menu de navegação" aria-expanded="false">
+      ☰ Menu
+    </button>
+
+    <nav id="main-nav" aria-label="Navegação principal">
+      <a href="#inicio">Início</a>
+      <a href="#categorias">Categorias</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#sobre">Sobre nós</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="access-button" id="header-access">
+        ♿ Acessibilidade
+      </button>
+      <button class="cart-button" id="cart-button">
+        🛒 Carrinho (<span id="cart-count">0</span>)
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <span class="hero-tag">A CULTURA DO BASQUETE COMEÇA AQUI</span>
+    <h1>DOMINE<br>A <span>QUADRA.</span></h1>
+    <p>
+      Encontre os equipamentos certos para seu jogo.
+      Estilo, qualidade e atitude em um só lugar.
+    </p>
+    <a href="#produtos" class="primary-button">EXPLORAR PRODUTOS →</a>
+  </div>
+</section>
+
+<section id="categorias">
+  <div class="section-title">
+    <small>ENCONTRE SEU ESTILO</small>
+    <h2>EXPLORE AS CATEGORIAS</h2>
+    <p>Tudo o que você precisa para viver o basquete.</p>
+  </div>
+
+  <div class="categories">
+    <a href="#produtos" class="category-card" data-category-link="Tênis">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80"
+        alt="Tênis esportivo vermelho em destaque">
+      <div class="category-info">
+        <h3>TÊNIS</h3>
+        <p>Calçados para todos os jogos.</p>
+      </div>
+    </a>
+
+    <a href="#produtos" class="category-card" data-category-link="Roupas">
+      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80"
+        alt="Camiseta esportiva">
+      <div class="category-info">
+        <h3>ROUPAS</h3>
+        <p>Vista sua paixão pelo esporte.</p>
+      </div>
+    </a>
+
+    <a href="#produtos" class="category-card" data-category-link="Bolas">
+      <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=600&q=80"
+        alt="Bola de basquete em uma quadra">
+      <div class="category-info">
+        <h3>BOLAS</h3>
+        <p>Precisão em cada arremesso.</p>
+      </div>
+    </a>
+
+    <a href="#produtos" class="category-card" data-category-link="Acessórios">
+      <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=600&q=80"
+        alt="Equipamentos esportivos">
+      <div class="category-info">
+        <h3>ACESSÓRIOS</h3>
+        <p>Complete seu equipamento.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="products-section" id="produtos">
+  <div class="section-title">
+    <small>ESCOLHA SEU EQUIPAMENTO</small>
+    <h2>DESTAQUES DA LOJA</h2>
+    <p>Confira alguns dos nossos produtos.</p>
+  </div>
+
+  <div class="product-tools">
+    <label>
+      <span class="sr-only">Pesquisar produtos</span>
+      <input class="search-input" id="search"
+        type="search" placeholder="Pesquisar produto..."
+        aria-label="Pesquisar produtos pelo nome">
+    </label>
+
+    <label>
+      <span class="sr-only">Filtrar por categoria</span>
+      <select class="filter-select" id="category-filter"
+        aria-label="Filtrar produtos por categoria">
+        <option value="Todas">Todas as categorias</option>
+        <option value="Tênis">Tênis</option>
+        <option value="Roupas">Roupas</option>
+        <option value="Bolas">Bolas</option>
+        <option value="Acessórios">Acessórios</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="products" id="product-list">
+
+    <article class="product-card" data-category="Tênis">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
+        alt="Tênis esportivo vermelho">
+      <div class="product-info">
+        <span class="category">Tênis</span>
+        <h3>Tênis Court Pro</h3>
+        <p>Conforto e estabilidade para jogar.</p>
+        <span class="price">R$ 399,90</span>
+        <button class="add-button" data-name="Tênis Court Pro"
+          data-price="399.90">Adicionar ao carrinho</button>
+      </div>
+    </article>
+
+    <article class="product-card" data-category="Roupas">
+      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80"
+        alt="Camiseta esportiva">
+      <div class="product-info">
+        <span class="category">Roupas</span>
+        <h3>Camiseta Basketball</h3>
+        <p>Leveza para seu dia a dia.</p>
+        <span class="price">R$ 89,90</span>
+        <button class="add-button" data-name="Camiseta Basketball"
+          data-price="89.90">Adicionar ao carrinho</button>
+      </div>
+    </article>
+
+    <article class="product-card" data-category="Bolas">
+      <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=700&q=80"
+        alt="Bola de basquete">
+      <div class="product-info">
+        <span class="category">Bolas</span>
+        <h3>Bola Street Ball</h3>
+        <p>Ideal para partidas na quadra.</p>
+        <span class="price">R$ 129,90</span>
+        <button class="add-button" data-name="Bola Street Ball"
+          data-price="129.90">Adicionar ao carrinho</button>
+      </div>
+    </article>
+
+    <article class="product-card" data-category="Acessórios">
+      <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=700&q=80"
+        alt="Equipamento esportivo">
+      <div class="product-info">
+        <span class="category">Acessórios</span>
+        <h3>Kit Esportivo</h3>
+        <p>Itens para complementar seu jogo.</p>
+        <span class="price">R$ 59,90</span>
+        <button class="add-button" data-name="Kit Esportivo"
+          data-price="59.90">Adicionar ao carrinho</button>
+      </div>
+    </article>
+
+  </div>
+
+  <p id="search-status" role="status" aria-live="polite"></p>
+</section>
+
+<section class="benefits" aria-label="Benefícios da loja">
+  <div class="benefit">
+    <div class="benefit-icon" aria-hidden="true">🏀</div>
+    <h3>PAIXÃO PELO JOGO</h3>
+    <p>Produtos selecionados para quem ama basquete.</p>
+  </div>
+
+  <div class="benefit">
+    <div class="benefit-icon" aria-hidden="true">🚚</div>
+    <h3>ENTREGA</h3>
+    <p>Consulte as condições de entrega da loja.</p>
+  </div>
+
+  <div class="benefit">
+    <div class="benefit-icon" aria-hidden="true">⭐</div>
+    <h3>QUALIDADE</h3>
+    <p>Equipamentos para acompanhar sua evolução.</p>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div>
+    <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1000&q=85"
+      alt="Quadra de basquete com cesta e bola">
+  </div>
+  <div>
+    <small style="color:#df570c;font-weight:900;letter-spacing:3px">
+      NOSSA HISTÓRIA
+    </small>
+    <h2>MAIS QUE UM ESPORTE. UMA CULTURA.</h2>
+    <p>
+      A COURT ELITE nasceu para conectar pessoas que compartilham
+      a mesma paixão pelo basquete.
+    </p>
+    <p>
+      Nosso objetivo é reunir produtos, estilo e inspiração
+      para todos que vivem o jogo dentro e fora das quadras.
+    </p>
+  </div>
+</section>
+
+<section class="contact" id="contato">
+  <h2>FAÇA PARTE DO NOSSO JOGO!</h2>
+  <p>Entre em contato e conheça mais sobre a COURT ELITE.</p>
+  <a href="mailto:contato@courtelite.com">FALE CONOSCO</a>
+</section>
+
+</main>
+
+<footer>
+  <a class="logo" href="#inicio">COURT <span>ELITE.</span></a>
+  <p>© 2026 COURT ELITE. Projeto demonstrativo de loja virtual.</p>
+  <p>Basquete, estilo e acessibilidade para todos.</p>
+</footer>
+
+<button class="access-toolbar" id="floating-access"
+  aria-label="Abrir configurações de acessibilidade">
+  ♿ Acessibilidade
+</button>
+
+<div class="cart-message" id="cart-message"
+  role="status" aria-live="polite"></div>
+
+<!-- JANELA INICIAL DE ACESSIBILIDADE -->
+
+<dialog id="access-dialog" aria-labelledby="modal-title">
+  <div class="modal-content">
+    <div class="modal-logo">COURT <span>ELITE.</span></div>
+
+    <div id="welcome-screen">
+      <h2 id="modal-title">VAMOS ADAPTAR SUA EXPERIÊNCIA?</h2>
+      <p>
+        Queremos que todos possam aproveitar nossa loja.
+        Você gostaria de ativar recursos de acessibilidade?
+      </p>
+
+      <div class="modal-actions">
+        <button class="modal-primary" id="yes-access">
+          SIM, QUERO ATIVAR
+        </button>
+        <button class="modal-secondary" id="no-access">
+          NÃO, CONTINUAR
+        </button>
+      </div>
+    </div>
+
+    <div id="access-settings">
+      <h2 id="settings-title">PERSONALIZE SUA EXPERIÊNCIA</h2>
+      <p>Escolha os recursos que deseja utilizar. Você pode selecionar vários.</p>
+
+      <label class="modal-option">
+        <input type="checkbox" id="contrast-option">
+        <span>
+          <strong>Alto contraste</strong>
+          <small>Deixa os elementos mais fáceis de distinguir.</small>
+        </span>
+      </label>
+
+      <label class="modal-option">
+        <input type="checkbox" id="text-option">
+        <span>
+          <strong>Letras maiores</strong>
+          <small>Aumenta o tamanho dos textos da página.</small>
+        </span>
+      </label>
+
+      <label class="modal-option">
+        <input type="checkbox" id="voice-option">
+        <span>
+          <strong>Leitura em voz alta</strong>
+          <small>Permite ler textos selecionados ou a página inteira.</small>
+        </span>
+      </label>
+
+      <label class="modal-option">
+        <input type="checkbox" id="motion-option">
+        <span>
+          <strong>Reduzir animações</strong>
+          <small>Reduz movimentos e efeitos de transição.</small>
+        </span>
+      </label>
+
+      <label class="modal-option">
+        <input type="checkbox" id="links-option">
+        <span>
+          <strong>Destacar links e botões</strong>
+          <small>Adiciona contornos mais visíveis aos controles.</small>
+        </span>
+      </label>
+
+      <div class="modal-actions">
+        <button class="modal-primary" id="save-access">
+          SALVAR PREFERÊNCIAS
+        </button>
+        <button class="modal-secondary" id="cancel-access">
+          VOLTAR
+        </button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+/* ACESSIBILIDADE */
+
+const dialog = document.getElementById('access-dialog');
+const welcome = document.getElementById('welcome-screen');
+const settings = document.getElementById('access-settings');
+
+const accessOptions = {
+  contrast: document.getElementById('contrast-option'),
+  text: document.getElementById('text-option'),
+  voice: document.getElementById('voice-option'),
+  motion: document.getElementById('motion-option'),
+  links: document.getElementById('links-option')
+};
+
+let lastFocusedElement = null;
+
+function openAccess() {
+  lastFocusedElement = document.activeElement;
+  welcome.style.display = 'none';
+  settings.classList.add('visible');
+
+  if (!dialog.open) dialog.showModal();
+
+  document.getElementById('settings-title').focus();
+}
+
+document.getElementById('settings-title').setAttribute('tabindex', '-1');
+
+function closeAccess() {
+  dialog.close();
+  if (lastFocusedElement) lastFocusedElement.focus();
+}
+
+document.getElementById('yes-access').addEventListener('click', () => {
+  welcome.style.display = 'none';
+  settings.classList.add('visible');
+  document.getElementById('settings-title').focus();
+});
+
+document.getElementById('no-access').addEventListener('click', () => {
+  closeAccess();
+});
+
+document.getElementById('cancel-access').addEventListener('click', () => {
+  settings.classList.remove('visible');
+  welcome.style.display = 'block';
+  closeAccess();
+});
+
+document.getElementById('save-access').addEventListener('click', () => {
+  applyAccessibility();
+  localStorage.setItem('courtAccessibilityChosen', 'yes');
+  closeAccess();
+});
+
+function applyAccessibility() {
+  document.body.classList.toggle('high-contrast', accessOptions.contrast.checked);
+  document.body.classList.toggle('large-text', accessOptions.text.checked);
+  document.body.classList.toggle('reduce-motion', accessOptions.motion.checked);
+  document.body.classList.toggle('highlight-links', accessOptions.links.checked);
+
+  localStorage.setItem('courtAccessibility', JSON.stringify({
+    contrast: accessOptions.contrast.checked,
+    text: accessOptions.text.checked,
+    voice: accessOptions.voice.checked,
+    motion: accessOptions.motion.checked,
+    links: accessOptions.links.checked
+  }));
+
+  if (!accessOptions.voice.checked && 'speechSynthesis' in window) {
+    speechSynthesis.cancel();
+  }
+}
+
+function loadAccessibility() {
+  const saved = localStorage.getItem('courtAccessibility');
+
+  if (saved) {
+    try {
+      const data = JSON.parse(saved);
+
+      Object.keys(accessOptions).forEach(key => {
+        accessOptions[key].checked = Boolean(data[key]);
+      });
+
+      applyAccessibility();
+    } catch (error) {
+      console.warn('Não foi possível carregar as preferências.');
+    }
+  }
+}
+
+loadAccessibility();
+
+if (localStorage.getItem('courtAccessibilityChosen') !== 'yes') {
+  welcome.style.display = 'block';
+  settings.classList.remove('visible');
+  dialog.showModal();
+} else {
+  welcome.style.display = 'none';
+  settings.classList.remove('visible');
+}
+
+document.getElementById('floating-access').addEventListener('click', openAccess);
+document.getElementById('header-access').addEventListener('click', openAccess);
+
+/* LEITURA EM VOZ ALTA */
+
+function speak(text) {
+  if (!accessOptions.voice.checked) {
+    showMessage('Ative a leitura em voz alta nas configurações de acessibilidade.');
+    return;
+  }
+
+  if (!('speechSynthesis' in window)) {
+    showMessage('Seu navegador não oferece suporte à leitura em voz alta.');
+    return;
+  }
+
+  speechSynthesis.cancel();
+
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'pt-BR';
+  utterance.rate = 1;
+
+  speechSynthesis.speak(utterance);
+}
+
+document.addEventListener('dblclick', event => {
+  if (!accessOptions.voice.checked) return;
+
+  const selection = window.getSelection().toString().trim();
+
+  if (selection) speak(selection);
+});
+
+/* MENU MOBILE */
+
+const menuButton = document.getElementById('menu-button');
+const nav = document.getElementById('main-nav');
+
+menuButton.addEventListener('click', () => {
+  const isOpen = nav.classList.toggle('open');
+  menuButton.setAttribute('aria-expanded', String(isOpen));
+  menuButton.setAttribute('aria-label',
+    isOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
+});
+
+nav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('open');
+    menuButton.setAttribute('aria-expanded', 'false');
+  });
+});
+
+/* PESQUISA E FILTROS */
+
+const search = document.getElementById('search');
+const filter = document.getElementById('category-filter');
+const products = [...document.querySelectorAll('.product-card')];
+const searchStatus = document.getElementById('search-status');
+
+function filterProducts() {
+  const term = search.value.toLowerCase().trim();
+  const category = filter.value;
+  let visible = 0;
+
+  products.forEach(product => {
+    const name = product.querySelector('h3').textContent.toLowerCase();
+    const productCategory = product.dataset.category;
+
+    const matchesName = name.includes(term);
+    const matchesCategory = category === 'Todas' || category === productCategory;
+
+    const show = matchesName && matchesCategory;
+    product.style.display = show ? 'flex' : 'none';
+
+    if (show) visible++;
+  });
+
+  searchStatus.textContent = visible + (visible === 1
+    ? ' produto encontrado.'
+    : ' produtos encontrados.');
+
+  let empty = document.getElementById('no-products');
+
+  if (visible === 0) {
+    if (!empty) {
+      empty = document.createElement('p');
+      empty.id = 'no-products';
+      empty.className = 'no-results';
+      empty.textContent = 'Nenhum produto encontrado. Tente outra pesquisa.';
+      document.getElementById('product-list').appendChild(empty);
+    }
+  } else if (empty) {
+    empty.remove();
+  }
+}
+
+search.addEventListener('input', filterProducts);
+filter.addEventListener('change', filterProducts);
+
+document.querySelectorAll('[data-category-link]').forEach(link => {
+  link.addEventListener('click', () => {
+    filter.value = link.dataset.categoryLink;
+    filterProducts();
+  });
+});
+
+/* CARRINHO */
+
+let cart = [];
+
+function updateCart() {
+  document.getElementById('cart-count').textContent =
+    cart.reduce((total, item) => total + item.quantity, 0);
+}
+
+function showMessage(message) {
+  const element = document.getElementById('cart-message');
+  element.textContent = message;
+  element.classList.add('visible');
+
+  window.clearTimeout(showMessage.timer);
+  showMessage.timer = window.setTimeout(() => {
+    element.classList.remove('visible');
+  }, 3000);
+}
+
+document.querySelectorAll('.add-button').forEach(button => {
+  button.addEventListener('click', () => {
+    const name = button.dataset.name;
+    const price = Number(button.dataset.price);
+
+    const existing = cart.find(item => item.name === name);
+
+    if (existing) {
+      existing.quantity++;
+    } else {
+      cart.push({ name, price, quantity: 1 });
+    }
+
+    updateCart();
+    showMessage(name + ' foi adicionado ao carrinho!');
+  });
+});
+
+document.getElementById('cart-button').addEventListener('click', () => {
+  if (cart.length === 0) {
+    showMessage('Seu carrinho ainda está vazio.');
+    return;
+  }
+
+  const summary = cart.map(item =>
+    item.name + ': ' + item.quantity + ' unidade(s)'
+  ).join('. ');
+
+  const total = cart.reduce((sum, item) =>
+    sum + item.price * item.quantity, 0);
+
+  const formatted = total.toLocaleString('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  });
+
+  showMessage('Carrinho: ' + summary + '. Total: ' + formatted);
+  speak('Seu carrinho. ' + summary + '. Total: ' + formatted);
+});
+
+</script>
+</body>
+</html>
